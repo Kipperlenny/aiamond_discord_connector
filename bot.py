@@ -59,7 +59,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await found_channel.send("Telegram (" + update.message.from_user.first_name + "): " + update.message.text)
 
 async def freqtrade_echo_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if update.message.from_user.username == "aiamond_freqtrade_bot" and update.message.reply_to_message.text.find("Open Rate") > -1:
+    if update.message.from_user.username == "aiamond_freqtrade_bot" and update.message.text.find("Open Rate") > -1:
         found_channel = ""
         for server in client.guilds:
             for schannel in server.channels:
